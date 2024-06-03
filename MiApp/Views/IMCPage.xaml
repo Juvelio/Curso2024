@@ -3,8 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MiApp.Views.IMCPage"
              Title="IMCPage">
-    <VerticalStackLayout WidthRequest="250" Spacing="10">
-        <Label 
+
+
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#1DE58D" Offset="0.1"/>
+                <GradientStop Color="#3ACEFA" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label Margin="40" Text="Hola, Jose" FontSize="30" FontAttributes="Bold"/>
+
+        <Frame Margin="0,100,0,-45" CornerRadius="45" HasShadow="False">
+            <VerticalStackLayout WidthRequest="250" Spacing="10">
+                <Label 
             Text="Calculadora de IMC "
             FontSize="Large"
             TextColor="Red"
@@ -12,24 +26,27 @@
             HorizontalOptions="Center" />
 
 
-        <StackLayout>
-            <Label Text="Ingrese su talla:"/>
-            <Frame Padding="0">
-                <Entry x:Name="txtTalla"/>
-            </Frame>
-        </StackLayout>
+                <StackLayout>
+                    <Label Text="Ingrese su talla:"/>
+                    <Frame Padding="0">
+                        <Entry x:Name="txtTalla"/>
+                    </Frame>
+                </StackLayout>
 
-        <StackLayout>
-            <Label Text="Ingrese su peso:"/>
-            <Frame Padding="0">
-                <Entry x:Name="txtPeso"/>
-            </Frame>
-        </StackLayout>
+                <StackLayout>
+                    <Label Text="Ingrese su peso:"/>
+                    <Frame Padding="0">
+                        <Entry x:Name="txtPeso"/>
+                    </Frame>
+                </StackLayout>
 
 
-        <StackLayout>
-            <Button Text="Calcular" Clicked="Button_Clicked"/>
-        </StackLayout>
+                <StackLayout>
+                    <Button Text="Calcular" Clicked="Button_Clicked"/>
+                </StackLayout>
 
-    </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+
 </ContentPage>

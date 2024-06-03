@@ -8,10 +8,15 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MiApp">
 
-    <ShellContent
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
+
+    <ShellContent
+     Title="Home"
+     ContentTemplate="{DataTemplate misPaginas:InicioPage}"
+     Route="InicioPage" />
 
     <ShellContent
      Title="Controles"
