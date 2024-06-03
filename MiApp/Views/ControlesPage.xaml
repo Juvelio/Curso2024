@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiApp.Views.ControlesPage"
+             Title="ControlesPage">
+    <VerticalStackLayout WidthRequest="250" Spacing="10">
+
+        <ActivityIndicator Color="Purple" IsRunning="True"/>
+
+        <BoxView BackgroundColor="Purple" HeightRequest="50"    WidthRequest="50"></BoxView>
+
+        <CheckBox/>
+
+        <DatePicker/>
+
+        <Editor/>
+
+        <Entry/>
+
+        <Image Source="dotnet_bot.png" HeightRequest="50"/>
+
+        <RadioButton IsChecked="True"/>
+
+        <Switch IsToggled="True"/>
+
+        <Ellipse Stroke="Red"
+         StrokeThickness="6"
+         WidthRequest="150"
+         HeightRequest="150"
+         HorizontalOptions="Center" />
+
+        <Button Text="Calcular" BackgroundColor="Blue" CornerRadius="25"/>
+    </VerticalStackLayout>
+</ContentPage>

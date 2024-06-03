@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiApp.Views.IMCPage"
+             Title="IMCPage">
+    <VerticalStackLayout WidthRequest="250" Spacing="10">
+        <Label 
+            Text="Calculadora de IMC "
+            FontSize="Large"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+        <StackLayout>
+            <Label Text="Ingrese su talla:"/>
+            <Frame Padding="0">
+                <Entry x:Name="txtTalla"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Text="Ingrese su peso:"/>
+            <Frame Padding="0">
+                <Entry x:Name="txtPeso"/>
+            </Frame>
+        </StackLayout>
+
+
+        <StackLayout>
+            <Button Text="Calcular" Clicked="Button_Clicked"/>
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
