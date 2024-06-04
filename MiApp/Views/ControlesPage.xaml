@@ -1,34 +1,198 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MiApp.Views.ControlesPage"
+             x:Class="MiApp.Views.ControlesPage"              
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              Title="ControlesPage">
-    <VerticalStackLayout WidthRequest="250" Spacing="10">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <!-- ActivityIndicator: Muestra un indicador de actividad -->
+            <ActivityIndicator IsRunning="True" />
 
-        <ActivityIndicator Color="Purple" IsRunning="True"/>
+            <!-- Button: Botón que realiza una acción al ser pulsado -->
+            <Button Text="¡Haz clic aquí!" />
 
-        <BoxView BackgroundColor="Purple" HeightRequest="50"    WidthRequest="50"></BoxView>
+            <!-- CheckBox: Casilla de verificación -->
+            <CheckBox IsChecked="True" />
 
-        <CheckBox/>
+            <!-- CollectionView: Vista de colección para mostrar listas de datos -->
+            <CollectionView ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nombre}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-        <DatePicker/>
+            <!-- ContentView: Contenedor para un solo elemento de contenido -->
+            <ContentView>
+                <Label Text="Esto está dentro de un ContentView" />
+            </ContentView>
 
-        <Editor/>
+            <!-- DatePicker: Selector de fecha -->
+            <DatePicker Date="{x:Static sys:DateTime.Now}" />
 
-        <Entry/>
+            <!-- Editor: Área de texto multi-línea -->
+            <Editor Placeholder="Escribe aquí" />
 
-        <Image Source="dotnet_bot.png" HeightRequest="50"/>
+            <!-- Entry: Entrada de texto de una sola línea -->
+            <Entry Placeholder="Escribe aquí" />
 
-        <RadioButton IsChecked="True"/>
+            <!-- Frame: Contenedor con bordes y sombreado -->
+            <Frame BorderColor="Gray" CornerRadius="5">
+                <Label Text="Esto está dentro de un Frame" />
+            </Frame>
 
-        <Switch IsToggled="True"/>
+            <!-- Grid: Diseño de cuadrícula -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Fila 0, Columna 0" Grid.Row="0" Grid.Column="0" />
+                <Label Text="Fila 1, Columna 1" Grid.Row="1" Grid.Column="1" />
+            </Grid>
 
-        <Ellipse Stroke="Red"
-         StrokeThickness="6"
-         WidthRequest="150"
-         HeightRequest="150"
-         HorizontalOptions="Center" />
+            <!-- Image: Muestra una imagen -->
+            <Image Source="dotnet_bot.png" HeightRequest="100" WidthRequest="100" />
 
-        <Button Text="Calcular" BackgroundColor="Blue" CornerRadius="25"/>
-    </VerticalStackLayout>
+            <!-- Label: Muestra texto -->
+            <Label Text="¡Hola, estamos en el curso de .NET MAUI!" />
+
+            <!-- ListView: Vista de lista para mostrar datos (anterior a CollectionView) -->
+            <ListView ItemsSource="{Binding Items}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nombre}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Picker: Selector de elementos -->
+            <Picker Title="Selecciona un elemento">
+                <Picker.Items>
+                    <x:String>Elemento 1</x:String>
+                    <x:String>Elemento 2</x:String>
+                    <x:String>Elemento 3</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- ProgressBar: Barra de progreso -->
+            <ProgressBar Progress="0.5" />
+
+            <!-- RadioButton: Botón de opción -->
+            <RadioButton Content="Opción 1" GroupName="grupo1" />
+            <RadioButton Content="Opción 2" GroupName="grupo1" />
+
+            <!-- RefreshView: Vista de actualización para listas -->
+            <RefreshView IsRefreshing="False">
+                <ListView ItemsSource="{Binding Items}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+
+            <!-- ScrollView: Contenedor con desplazamiento -->
+            <ScrollView>
+                <Label Text="Esto está dentro de un ScrollView" />
+            </ScrollView>
+
+            <!-- SearchBar: Barra de búsqueda -->
+            <SearchBar Placeholder="Busca aquí" />
+
+            <!-- Slider: Control deslizante -->
+            <Slider Minimum="0" Maximum="100" Value="50" />
+
+            <!-- Stepper: Selector de valor incremental -->
+            <Stepper Minimum="0" Maximum="10" Value="5" Increment="1" />
+
+            <!-- SwipeView: Vista con funcionalidad de deslizamiento -->
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Eliminar" BackgroundColor="Red" />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Grid BackgroundColor="LightGray" HeightRequest="50">
+                    <Label Text="¡Deslízame!"  VerticalOptions="CenterAndExpand"/>
+                </Grid>
+                <SwipeView.RightItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Ok" BackgroundColor="Green" />
+                    </SwipeItems>
+                </SwipeView.RightItems>
+            </SwipeView>
+
+            <!-- Switch: Interruptor de encendido/apagado -->
+            <Switch IsToggled="True" />
+
+            <!-- TableView: Vista en tabla -->
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Sección 1">
+                        <TextCell Text="Texto 1" />
+                        <TextCell Text="Texto 2" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <!-- TimePicker: Selector de hora -->
+            <TimePicker Time="12:00" />
+
+            <!-- WebView: Vista para mostrar contenido web -->
+            <WebView Source="https://www.policia.gob.pe/" HeightRequest="1000" />
+
+            <!-- StackLayout: Disposición en pila -->
+            <StackLayout>
+                <Label Text="Esto está dentro de un StackLayout" />
+            </StackLayout>
+
+            <!-- AbsoluteLayout: Disposición absoluta -->
+            <AbsoluteLayout>
+                <Label Text="Esto está dentro de un AbsoluteLayout" AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            </AbsoluteLayout>
+
+            <!-- FlexLayout: Disposición flexible -->
+            <FlexLayout Direction="Row">
+                <Label Text="Esto está dentro de un FlexLayout" />
+            </FlexLayout>
+
+            <!-- HorizontalStackLayout: Disposición en fila horizontal -->
+            <HorizontalStackLayout>
+                <Label Text="Esto está dentro de un HorizontalStackLayout" />
+            </HorizontalStackLayout>
+
+            <!-- VerticalStackLayout: Disposición en columna vertical -->
+            <VerticalStackLayout>
+                <Label Text="Esto está dentro de un VerticalStackLayout" />
+            </VerticalStackLayout>
+
+            <!-- BindableLayout: Diseño enlazable -->
+            <StackLayout BindableLayout.ItemsSource="{Binding Items}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Nombre}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+
+            <!-- Shapes: Dibujar formas -->
+            <!--<GraphicsView>
+                <GraphicsView.Drawable>
+                    <Drawable>
+                        <DrawableElement>
+                            <Ellipse Width="100" Height="100" Fill="Blue" />
+                        </DrawableElement>
+                    </Drawable>
+                </GraphicsView.Drawable>
+            </GraphicsView>-->
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

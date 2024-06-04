@@ -6,4 +6,9 @@ public partial class CalculadoraPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+		
+    }
 }
