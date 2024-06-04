@@ -57,16 +57,30 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Roboto-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Roboto-Regular.ttf" />
+	  <None Remove="Resources\Images\backspaceoutline.png" />
+	  <None Remove="Resources\Images\calculatorsolid.svg" />
+	  <None Remove="Resources\Images\dotsvertical.png" />
+	  <None Remove="Resources\Images\equal.svg" />
+	  <None Remove="Resources\Images\gearsolid.svg" />
+	  <None Remove="Resources\Images\heartpulsesolid.svg" />
+	  <None Remove="Resources\Images\housesolid.svg" />
 	  <None Remove="Resources\Images\robot.png" />
+	  <None Remove="Resources\Images\sync.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\CalculadoraPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ControlesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

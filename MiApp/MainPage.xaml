@@ -14,17 +14,17 @@
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Label
-                Text="Hello, Curso!"
+                Text="Hola, amigos!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
+                Text="Bienvenidos a &#10; mi curso de .NET Multi-platform App UI"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
-            <Button BackgroundColor="Fuchsia"
+            <Button BackgroundColor="{StaticResource Primary}"
                 x:Name="CounterBtn"
                 Text="Click Aqui" 
                 SemanticProperties.Hint="Counts the number of times you click"
