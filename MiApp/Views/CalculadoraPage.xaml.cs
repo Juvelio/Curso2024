@@ -73,6 +73,9 @@ public partial class CalculadoraPage : ContentPage
             case "10":
                 LimpiarOperacion();
                 return string.Empty;
+            case "18":
+                Shell.Current.GoToAsync($"{nameof(CientificaPage)}");
+                return string.Empty;
             default:
                 return numero;
         }

@@ -8,6 +8,8 @@ namespace MiApp
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(IMCPage), typeof(IMCPage));
+            Routing.RegisterRoute(nameof(CientificaPage), typeof(CientificaPage));
+
         }
     }
 }

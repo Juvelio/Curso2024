@@ -68,6 +68,11 @@
           ContentTemplate="{DataTemplate misPaginas:CalculadoraPage}"
           Route="CalculadoraPage" Icon="calculatorsolid.svg"/>
 
+        <!--<ShellContent
+           Title="Cientifica"
+           ContentTemplate="{DataTemplate misPaginas:CientificaPage}"
+           Route="CientificaPage" Icon="calculatorsolid.svg"/>-->
+
         <ShellContent
          Title="Controles"
          ContentTemplate="{DataTemplate misPaginas:ControlesPage}"

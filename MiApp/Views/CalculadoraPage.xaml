@@ -55,9 +55,9 @@
             <Grid  ColumnDefinitions="*,*,*,*" Margin="30,0" ColumnSpacing="8" VerticalOptions="FillAndExpand">
                 <Frame Grid.Column="0"  Style="{StaticResource MyFrame}">
                     <Grid>
-                        <!--<Grid.GestureRecognizers>
+                        <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="18"/>
-                        </Grid.GestureRecognizers>-->
+                        </Grid.GestureRecognizers>
                         <Image Source="dotsvertical.png" HeightRequest="30">
                             <Image.Behaviors>
                                 <toolkit:IconTintColorBehavior TintColor="#141313" />
