@@ -39,15 +39,10 @@
     <Grid BackgroundColor="#F6F6F6" RowDefinitions="200,auto,*">
         <Grid Grid.Row="0">
             <StackLayout VerticalOptions="CenterAndExpand" Spacing="40" >
-                <Label x:Name="txtOperacion" Text="55+555" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Margin="30,0" FontSize="35" FontFamily="RobotoBold"/>
+                <Label x:Name="txtOperacion"  VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Margin="30,0" FontSize="35" FontFamily="RobotoBold" TextTransform="Lowercase"/>
                 <!--FontSize="60"-->
-                <Label x:Name="txtResultado" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Margin="30,0" FontSize="20" >
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="= " FontFamily="RobotoBold"/>
-                            <Span Text="50" FontFamily="RobotoBold"/>
-                        </FormattedString>
-                    </Label.FormattedText>
+                <Label x:Name="txtResultado" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand"  Margin="30,0" FontSize="20" FontFamily="RobotoBold"  >
+                    
                 </Label>
             </StackLayout>
         </Grid>
@@ -59,25 +54,40 @@
             <!--PRIMERA FILA-->
             <Grid  ColumnDefinitions="*,*,*,*" Margin="30,0" ColumnSpacing="8" VerticalOptions="FillAndExpand">
                 <Frame Grid.Column="0"  Style="{StaticResource MyFrame}">
-                    <Image Source="dotsvertical.png" HeightRequest="30">
-                        <Image.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="#141313" />
-                        </Image.Behaviors>
-                    </Image>
+                    <Grid>
+                        <!--<Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="18"/>
+                        </Grid.GestureRecognizers>-->
+                        <Image Source="dotsvertical.png" HeightRequest="30">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="#141313" />
+                            </Image.Behaviors>
+                        </Image>
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="1" Style="{StaticResource MyFrame}">
-                    <Image Source="sync.svg" HeightRequest="30">
-                        <Image.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="#141313" />
-                        </Image.Behaviors>
-                    </Image>
+                    <Grid>
+                        <!--<Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="19"/>
+                        </Grid.GestureRecognizers>-->
+                        <Image Source="sync.svg" HeightRequest="30">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="#141313" />
+                            </Image.Behaviors>
+                        </Image>
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="2" Grid.ColumnSpan="2"  BackgroundColor="#D7D7D7" Style="{StaticResource MyFrame}">
-                    <Image Source="backspaceoutline.png" HeightRequest="30">
-                        <Image.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="Gray" />
-                        </Image.Behaviors>
-                    </Image>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="20"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="backspaceoutline.png" HeightRequest="30">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="Gray" />
+                            </Image.Behaviors>
+                        </Image>
+                    </Grid>
                 </Frame>
             </Grid>
             <!--FIN PRIMERA FILA-->
@@ -85,45 +95,61 @@
             <!--SEGUNDA FILA-->
             <Grid  ColumnDefinitions="*,*,*,*" Margin="30,0" ColumnSpacing="8" VerticalOptions="FillAndExpand">
                 <Frame Grid.Column="0"  Style="{StaticResource MyFrame}" BackgroundColor="#FF7A30">
-                    <Label Text="C" Style="{StaticResource MyLabel}" TextColor="White"/>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="C"/>
-                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="10"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="C" Style="{StaticResource MyLabel}" TextColor="White"/>
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="1" Style="{StaticResource MyFrame}" BackgroundColor="#F3D3C1">
-                    <!--<Label Text="%" Style="{StaticResource MyLabel}" TextColor="#FF7A30"/>-->
-                    <StackLayout Spacing="-20" Rotation="135">
-                        <Ellipse Stroke="#FF7A30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    <Grid>
+                        <!--<Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="11"/>
+                        </Grid.GestureRecognizers>-->
+                        <StackLayout Spacing="-20" Rotation="135">
+                            <Ellipse Stroke="#FF7A30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    StrokeThickness="2"
                                    WidthRequest="7"
                                    HeightRequest="7"/>
-                        <BoxView HeightRequest="2" WidthRequest="20" BackgroundColor="#FF7A30"/>
-                        <Ellipse Stroke="#FF7A30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                            <BoxView HeightRequest="2" WidthRequest="20" BackgroundColor="#FF7A30"/>
+                            <Ellipse Stroke="#FF7A30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                   StrokeThickness="2"
                                   WidthRequest="7"
                                   HeightRequest="7"/>
-                    </StackLayout>
+                        </StackLayout>
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="2"  Style="{StaticResource MyFrame}" BackgroundColor="#F3D3C1">
-                    <StackLayout Spacing="-50">
-                        <Label Text="+" Style="{StaticResource MyLabel}" FontFamily="RobotoRegular" TextColor="#FF7A30"/>
-                        <Label Text="_" Style="{StaticResource MyLabel}" FontFamily="RobotoRegular" TextColor="#FF7A30"/>
-                    </StackLayout>
-
+                    <Grid>
+                        <!--<Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="12"/>
+                        </Grid.GestureRecognizers>-->
+                        <StackLayout Spacing="-50">
+                            <Label Text="+" Style="{StaticResource MyLabel}" FontFamily="RobotoRegular" TextColor="#FF7A30"/>
+                            <Label Text="_" Style="{StaticResource MyLabel}" FontFamily="RobotoRegular" TextColor="#FF7A30"/>
+                        </StackLayout>
+                    </Grid>
                 </Frame>
 
                 <Frame Grid.Column="3" Style="{StaticResource MyFrame}" BackgroundColor="#B2C8F4">
-                    <StackLayout Spacing="-20">
-                        <Ellipse Stroke="#3278FF" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="13"/>
+                        </Grid.GestureRecognizers>
+                        <StackLayout Spacing="-20">
+                            <Ellipse Stroke="#3278FF" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                   StrokeThickness="2"
                                   WidthRequest="7"
                                   HeightRequest="7"/>
-                        <BoxView HeightRequest="2" WidthRequest="15" BackgroundColor="#3278FF"/>
-                        <Ellipse Stroke="#3278FF" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                            <BoxView HeightRequest="2" WidthRequest="15" BackgroundColor="#3278FF"/>
+                            <Ellipse Stroke="#3278FF" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                  StrokeThickness="2"
                                  WidthRequest="7"
                                  HeightRequest="7"/>
-                    </StackLayout>
+                        </StackLayout>
+                    </Grid>
+
                 </Frame>
             </Grid>
             <!--FIN SEGUNDA FILA-->
@@ -131,18 +157,36 @@
             <!--TECERA FILA-->
             <Grid  ColumnDefinitions="*,*,*,*" Margin="30,0" ColumnSpacing="8" VerticalOptions="FillAndExpand">
                 <Frame Grid.Column="0"  Style="{StaticResource MyFrame}">
-                    <Label Text="7" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="7"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="7" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="1" Style="{StaticResource MyFrame}">
-                    <Label Text="8" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="8"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="8" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
 
                 </Frame>
                 <Frame Grid.Column="2" Style="{StaticResource MyFrame}">
-                    <Label Text="9" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="9"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="9" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
 
                 <Frame Grid.Column="3" Style="{StaticResource MyFrame}" BackgroundColor="#B2C8F4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
                     <Grid Rotation="45">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="14"/>
+                        </Grid.GestureRecognizers>
                         <BoxView HeightRequest="2" WidthRequest="20" BackgroundColor="#3278FF"/>
                         <BoxView HeightRequest="20" WidthRequest="2" BackgroundColor="#3278FF" />
                     </Grid>
@@ -152,17 +196,38 @@
             <!--TECERA FILA-->
             <Grid  ColumnDefinitions="*,*,*,*" Margin="30,0" ColumnSpacing="8" VerticalOptions="FillAndExpand">
                 <Frame Grid.Column="0" Style="{StaticResource MyFrame}">
-                    <Label Text="4" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="4"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="4" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="1"  Style="{StaticResource MyFrame}">
-                    <Label Text="5" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="5"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="5" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="2"  Style="{StaticResource MyFrame}">
-                    <Label Text="6" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="6"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="6" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
 
                 <Frame Grid.Column="3" Style="{StaticResource MyFrame}" BackgroundColor="#B2C8F4">
-                    <BoxView HeightRequest="2" WidthRequest="15" BackgroundColor="#3278FF"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="15"/>
+                        </Grid.GestureRecognizers>
+                        <BoxView HeightRequest="2" WidthRequest="15" BackgroundColor="#3278FF"/>
+                    </Grid>
                 </Frame>
             </Grid>
             <!--FIN SEGUNDA FILA-->
@@ -170,17 +235,35 @@
             <!--TECERA FILA-->
             <Grid  ColumnDefinitions="*,*,*,*" Margin="30,0" ColumnSpacing="8" VerticalOptions="FillAndExpand">
                 <Frame Grid.Column="0"  Style="{StaticResource MyFrame}">
-                    <Label Text="1" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="1"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="1" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="1"  Style="{StaticResource MyFrame}">
-                    <Label Text="2" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="2"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="2" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
                 <Frame Grid.Column="2"  Style="{StaticResource MyFrame}">
-                    <Label Text="3" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="3"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="3" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
 
                 <Frame Grid.Column="3" Style="{StaticResource MyFrame}" BackgroundColor="#B2C8F4">
                     <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="16"/>
+                        </Grid.GestureRecognizers>
                         <BoxView HeightRequest="2" WidthRequest="15" BackgroundColor="#3278FF"/>
                         <BoxView HeightRequest="15" WidthRequest="2" BackgroundColor="#3278FF" />
                     </Grid>
@@ -191,20 +274,35 @@
             <!--TECERA FILA-->
             <Grid  ColumnDefinitions="*,*,*,*" Margin="30,0" ColumnSpacing="8" VerticalOptions="FillAndExpand">
                 <Frame Grid.Column="0" Grid.ColumnSpan="2"  Style="{StaticResource MyFrame}">
-                    <Label Text="0" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="0"/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="0" Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
 
 
                 <Frame Grid.Column="2"  Style="{StaticResource MyFrame}">
-                    <Label Text="." Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="."/>
+                        </Grid.GestureRecognizers>
+                        <Label Text="." Style="{StaticResource MyLabel}" TextColor="#474747"/>
+                    </Grid>
                 </Frame>
 
                 <Frame Grid.Column="3" Style="{StaticResource MyFrame}" BackgroundColor="#3278FF">
-                    <Image Source="equal.svg" HeightRequest="30">
-                        <Image.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="White" />
-                        </Image.Behaviors>
-                    </Image>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="17"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="equal.svg" HeightRequest="30">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="White" />
+                            </Image.Behaviors>
+                        </Image>
+                    </Grid>
                 </Frame>
             </Grid>
             <!--FIN SEGUNDA FILA-->
