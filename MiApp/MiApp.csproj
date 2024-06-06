@@ -46,7 +46,7 @@
 	  <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	  <AndroidPackageFormat>aab</AndroidPackageFormat>
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
@@ -75,7 +75,7 @@
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
 	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
 	  <ApplicationVersion>4</ApplicationVersion>
-	  <AndroidPackageFormat>aab</AndroidPackageFormat>
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	</PropertyGroup>
@@ -101,6 +101,11 @@
 	  <ApplicationVersion>4</ApplicationVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
+	  <CodesignKey>Apple Development: Juvelio  Bladimir MIRANDA LUNA (994MC95F9Q)</CodesignKey>
+	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -120,8 +125,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\materialdesignicons.ttf" />
 	  <None Remove="Resources\Fonts\Roboto-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Roboto-Regular.ttf" />
+	  <None Remove="Resources\Images\angleright.png" />
 	  <None Remove="Resources\Images\backspaceoutline.png" />
 	  <None Remove="Resources\Images\calculatorsolid.svg" />
 	  <None Remove="Resources\Images\cloudiness.png" />
@@ -134,12 +141,20 @@
 	  <None Remove="Resources\Images\housesolid.svg" />
 	  <None Remove="Resources\Images\humidity.png" />
 	  <None Remove="Resources\Images\listcolor.png" />
+	  <None Remove="Resources\Images\logopnp.png" />
+	  <None Remove="Resources\Images\logouniins.png" />
+	  <None Remove="Resources\Images\milogo.svg" />
 	  <None Remove="Resources\Images\overlay.png" />
 	  <None Remove="Resources\Images\pressure.png" />
 	  <None Remove="Resources\Images\robot.png" />
 	  <None Remove="Resources\Images\sync.svg" />
 	  <None Remove="Resources\Images\weather.png" />
 	  <None Remove="Resources\Images\wind.png" />
+	  <None Remove="Resources\Raw\codero.json" />
+	  <None Remove="Resources\Raw\coderov2.json" />
+	  <None Remove="Resources\Raw\dotnetbot.json" />
+	  <None Remove="Resources\Raw\midotnetbot.json" />
+	  <None Remove="Resources\Raw\mimaui.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -148,6 +163,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

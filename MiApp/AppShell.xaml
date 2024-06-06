@@ -27,7 +27,7 @@
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-    
+
     <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
@@ -59,7 +59,6 @@
          ContentTemplate="{DataTemplate local:MainPage}"
          Route="MainPage" Icon="housesolid.svg"/>
 
-        
         <ShellContent
          Title="IMC"
          ContentTemplate="{DataTemplate misPaginas:InicioPage}"
@@ -70,12 +69,6 @@
           ContentTemplate="{DataTemplate misPaginas:CalculadoraPage}"
           Route="CalculadoraPage" Icon="calculatorsolid.svg"/>
 
-        <!--<ShellContent
-           Title="Cientifica"
-           ContentTemplate="{DataTemplate misPaginas:CientificaPage}"
-           Route="CientificaPage" Icon="calculatorsolid.svg"/>-->
-
-
         <ShellContent
           Title="Clima"
           ContentTemplate="{DataTemplate misPaginas:WeatherPage}"
@@ -85,10 +78,6 @@
          Title="Controles"
          ContentTemplate="{DataTemplate misPaginas:ControlesPage}"
          Route="ControlesPage" Icon="gearsolid.png"/>
-
-
-        
-
     </TabBar>
 
 </Shell>

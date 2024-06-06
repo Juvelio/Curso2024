@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MiApp.Views.ControlesPage"              
              xmlns:sys="clr-namespace:System;assembly=netstandard"
-             Title="ControlesPage">
+             Title="Controles">
     <ScrollView>
         <StackLayout Padding="10">
             <!-- ActivityIndicator: Muestra un indicador de actividad -->

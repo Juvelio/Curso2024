@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MiApp.Views.InicioPage"
             xmlns:controls="clr-namespace:MiApp.Controls"
+            xmlns:helpers="clr-namespace:MiApp.Helpers"
+             
              Title="Calculadora IMC">
 
     <ScrollView>
@@ -21,7 +23,7 @@
                 <Label Text="Bienvenido" HorizontalOptions="Center" 
                    FontSize="30" FontFamily="RobotoBold" TextColor="White"
                    VerticalOptions="Center"/>
-                <Label Text="a mi Calculadora IMC" HorizontalOptions="Center" 
+                <Label Text="a mi Calculadora de IMC" HorizontalOptions="Center" 
                             FontSize="15" FontFamily="RobotoRegular"
                        TextColor="White"
                             VerticalOptions="Center"/>
@@ -35,17 +37,25 @@
                         <controls:CustomEntry x:Name="txtNombre" Placeholder="Ingrese su nombre" FontSize="25" Keyboard="Text" 
                                               TextColor="Black"
                                               PlaceholderColor="Gray"/>
-                    </Frame>
+                    </Frame>                   
 
                     <Button x:Name="btnContinuar" Clicked="btnContinuar_Clicked"
                         Text="Siguiente"
-                        TextTransform="Uppercase"
+                            TextTransform="Uppercase"
+                            ContentLayout="Right"
                             BackgroundColor="{StaticResource Primary}"
                             TextColor="White"
                         HorizontalOptions="End"                         
                         VerticalOptions="EndAndExpand"
                         Margin="0,0,0,20"
-                        HeightRequest="45"/>
+                        HeightRequest="45">
+                        <Button.ImageSource>
+                            <FontImageSource 
+                                FontFamily="MaterialIcons"                                                                   
+                                Color="White"                                                                    
+                                Glyph="{x:Static helpers:IconFont.ChevronRight}"/>
+                        </Button.ImageSource>
+                    </Button>
                 </StackLayout>
             </Frame>
         </Grid>

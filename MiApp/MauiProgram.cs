@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace MiApp
 {
@@ -10,9 +11,12 @@ namespace MiApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                
-                // Initialize the .NET MAUI Community Toolkit by adding the below line of code
+
+                // Inicialice el kit de herramientas de la comunidad .NET MAUI agregando la siguiente línea de código
                 .UseMauiCommunityToolkit()
+
+                // Inicialice SkiaSharp
+                .UseSkiaSharp()
 
                 .ConfigureFonts(fonts =>
                 {
@@ -22,6 +26,7 @@ namespace MiApp
                     //Mis fuentes personalizados
                     fonts.AddFont("Roboto-Bold.ttf", "RobotoBold");
                     fonts.AddFont("Roboto-Regular.ttf", "RobotoRegular");
+                    fonts.AddFont("materialdesignicons.ttf", "MaterialIcons");
                 });
 
 #if DEBUG
