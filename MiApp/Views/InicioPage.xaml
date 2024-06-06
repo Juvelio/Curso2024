@@ -3,43 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MiApp.Views.InicioPage"
             xmlns:controls="clr-namespace:MiApp.Controls"
-             
-             Title="Home">
+             Title="Calculadora IMC">
 
-    <Grid RowDefinitions="*, *">
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="#1DE58D" Offset="0.1"/>
-                <GradientStop Color="#3ACEFA" Offset="1.0"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+    <ScrollView>
+        <Grid RowDefinitions="*, *">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#116b53" Offset="0.1"/>
+                    <GradientStop Color="#eefbf5" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
 
-        <StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand">
+            <StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand">
 
-            <Image Source="robot.png" HeightRequest="160" />
+                <Image Source="robot.png" HeightRequest="200" />
 
-            <Label Text="Bienvenido" HorizontalOptions="Center" 
-                   FontSize="30" FontFamily="OpenSansSemibold"
+                <Label Text="Bienvenido" HorizontalOptions="Center" 
+                   FontSize="30" FontFamily="RobotoBold" TextColor="White"
                    VerticalOptions="Center"/>
-            <Label Text="A mi Calculadora IMC" HorizontalOptions="Center" 
-       FontSize="15" FontFamily="OpenSansSemibold"
-       VerticalOptions="Center"/>
-        </StackLayout>
-
-        <Frame Grid.Row="1" CornerRadius="45" HasShadow="False" Margin="0,0,0,-45" >
-            <StackLayout Margin="20" Spacing="20" VerticalOptions="FillAndExpand" BackgroundColor="Azure">
-                <Label Text="Cual es tu nombre?" FontSize="25" FontFamily="OpenSansSemibold"/>
-
-                <Frame Padding="10,0">
-                    <controls:CustomEntry Placeholder="Ingrese su nombre" />
-                </Frame>
-
-                <Button x:Name="btnContinuar" Clicked="btnContinuar_Clicked"
-                        Text="Siguiente"
-                        HorizontalOptions="End"                         
-                        VerticalOptions="FillAndExpand"
-                        HeightRequest="45"/>
+                <Label Text="a mi Calculadora IMC" HorizontalOptions="Center" 
+                            FontSize="15" FontFamily="RobotoRegular"
+                       TextColor="White"
+                            VerticalOptions="Center"/>
             </StackLayout>
-        </Frame>
-    </Grid>
+
+            <Frame Grid.Row="1" CornerRadius="45" HasShadow="False" Margin="0,0,0,-45" BorderColor="Transparent" >
+                <StackLayout Margin="20" Spacing="20" VerticalOptions="FillAndExpand" >
+                    <Label Text="¿Cual es tu nombre?" FontSize="25" FontFamily="RobotoBold"/>
+
+                    <Frame Padding="10,5">
+                        <controls:CustomEntry x:Name="txtNombre" Placeholder="Ingrese su nombre" FontSize="25" Keyboard="Text" 
+                                              TextColor="Black"
+                                              PlaceholderColor="Gray"/>
+                    </Frame>
+
+                    <Button x:Name="btnContinuar" Clicked="btnContinuar_Clicked"
+                        Text="Siguiente"
+                        TextTransform="Uppercase"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                        HorizontalOptions="End"                         
+                        VerticalOptions="EndAndExpand"
+                        Margin="0,0,0,20"
+                        HeightRequest="45"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
 </ContentPage>

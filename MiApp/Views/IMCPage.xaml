@@ -2,51 +2,53 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MiApp.Views.IMCPage"
-             Title="IMCPage">
+             xmlns:controls="clr-namespace:MiApp.Controls"
+             Title="Calculadora IMC">
 
 
 
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="#1DE58D" Offset="0.1"/>
-                <GradientStop Color="#3ACEFA" Offset="1.0"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+    <ScrollView>
+        <Grid RowDefinitions="150,*">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#116b53" Offset="0.1"/>
+                    <GradientStop Color="#3ACEFA" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
 
-        <Label Margin="40" Text="Hola, Jose" FontSize="30" FontAttributes="Bold"/>
+            <Label x:Name="lblNombre"  VerticalOptions="CenterAndExpand" Text="Hola, Jose"
+                    FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White"/>
 
-        <Frame Margin="0,100,0,-45" CornerRadius="45" HasShadow="False">
-            <VerticalStackLayout WidthRequest="250" Spacing="10">
-                <Label 
-            Text="Calculadora de IMC "
-            FontSize="Large"
-            TextColor="Red"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            <Frame Grid.Row="1" Margin="0,0,0,-45"  CornerRadius="45" HasShadow="False" BorderColor="Transparent" Padding="50">
+                <VerticalStackLayout  Spacing="10">
+                    <StackLayout Spacing="15">
+                        <Label Text="Talla:" TextColor="Black" FontSize="20" FontFamily="RobotoBold"/>
+                        <Frame Padding="10,5">
+                            <VerticalStackLayout>
+                                <controls:CustomEntry x:Name="txtTalla" Placeholder="Ingrese su talla" FontSize="20" Keyboard="Numeric" 
+                                                  TextColor="Black"
+                                                  PlaceholderColor="Gray" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </StackLayout>
 
+                    <StackLayout Spacing="15">
+                        <Label Text="Peso:" TextColor="Black" FontSize="20" FontFamily="RobotoBold"/>
+                        <Frame Padding="10,5">
+                            <VerticalStackLayout>
+                                <controls:CustomEntry x:Name="txtPeso" Placeholder="Ingrese su talla" FontSize="20" Keyboard="Numeric" 
+                                                  TextColor="Black"
+                                                  PlaceholderColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </StackLayout>
 
-                <StackLayout>
-                    <Label Text="Ingrese su talla:"/>
-                    <Frame Padding="0">
-                        <Entry x:Name="txtTalla"/>
-                    </Frame>
-                </StackLayout>
+                    <StackLayout Margin="0,20">
+                        <Button Text="Calcular" Clicked="Button_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                    </StackLayout>
 
-                <StackLayout>
-                    <Label Text="Ingrese su peso:"/>
-                    <Frame Padding="0">
-                        <Entry x:Name="txtPeso"/>
-                    </Frame>
-                </StackLayout>
-
-
-                <StackLayout>
-                    <Button Text="Calcular" Clicked="Button_Clicked"/>
-                </StackLayout>
-
-            </VerticalStackLayout>
-        </Frame>
-    </Grid>
-
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
 </ContentPage>

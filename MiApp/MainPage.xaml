@@ -4,7 +4,7 @@
              x:Class="MiApp.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
+        <VerticalStackLayout  BackgroundColor="White"
             Padding="30,0"
             Spacing="25">
             <Image
@@ -14,11 +14,11 @@
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Label
-                Text="Hola, amigos!"
+                Text="Hola, amigos!" TextColor="Black"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
-            <Label
+            <Label TextColor="Black"
                 Text="Bienvenidos a &#10; mi curso de .NET Multi-platform App UI"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"

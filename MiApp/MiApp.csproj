@@ -41,41 +41,58 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -101,13 +118,21 @@
 	  <None Remove="Resources\Fonts\Roboto-Regular.ttf" />
 	  <None Remove="Resources\Images\backspaceoutline.png" />
 	  <None Remove="Resources\Images\calculatorsolid.svg" />
+	  <None Remove="Resources\Images\cloudiness.png" />
 	  <None Remove="Resources\Images\dotsvertical.png" />
 	  <None Remove="Resources\Images\equal.svg" />
 	  <None Remove="Resources\Images\gearsolid.svg" />
+	  <None Remove="Resources\Images\grid.png" />
 	  <None Remove="Resources\Images\heartpulsesolid.svg" />
 	  <None Remove="Resources\Images\housesolid.svg" />
+	  <None Remove="Resources\Images\humidity.png" />
+	  <None Remove="Resources\Images\listcolor.png" />
+	  <None Remove="Resources\Images\overlay.png" />
+	  <None Remove="Resources\Images\pressure.png" />
 	  <None Remove="Resources\Images\robot.png" />
 	  <None Remove="Resources\Images\sync.svg" />
+	  <None Remove="Resources\Images\weather.png" />
+	  <None Remove="Resources\Images\wind.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -132,6 +157,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\InicioPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\WeatherPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
