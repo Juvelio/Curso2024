@@ -119,6 +119,7 @@
 	  <None Remove="Resources\Images\backspaceoutline.png" />
 	  <None Remove="Resources\Images\calculatorsolid.svg" />
 	  <None Remove="Resources\Images\cloudiness.png" />
+	  <None Remove="Resources\Images\cloudsunrain.svg" />
 	  <None Remove="Resources\Images\dotsvertical.png" />
 	  <None Remove="Resources\Images\equal.svg" />
 	  <None Remove="Resources\Images\gearsolid.svg" />

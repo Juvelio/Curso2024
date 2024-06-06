@@ -75,16 +75,19 @@
            ContentTemplate="{DataTemplate misPaginas:CientificaPage}"
            Route="CientificaPage" Icon="calculatorsolid.svg"/>-->
 
+
+        <ShellContent
+          Title="Clima"
+          ContentTemplate="{DataTemplate misPaginas:WeatherPage}"
+          Route="WeatherPage" Icon="cloudsunrain.svg"/>
+
         <ShellContent
          Title="Controles"
          ContentTemplate="{DataTemplate misPaginas:ControlesPage}"
          Route="ControlesPage" Icon="gearsolid.png"/>
 
 
-        <ShellContent
-              Title="Weather"
-              ContentTemplate="{DataTemplate misPaginas:WeatherPage}"
-              Route="WeatherPage" Icon="housesolid.svg"/>
+        
 
     </TabBar>
 
