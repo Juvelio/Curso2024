@@ -23,7 +23,7 @@
                 <Label Text="Bienvenido" HorizontalOptions="Center" 
                    FontSize="30" FontFamily="RobotoBold" TextColor="White"
                    VerticalOptions="Center"/>
-                <Label Text="a mi Calculadora de IMC" HorizontalOptions="Center" 
+                <Label Text="a mi calculadora de IMC" HorizontalOptions="Center" 
                             FontSize="15" FontFamily="RobotoRegular"
                        TextColor="White"
                             VerticalOptions="Center"/>

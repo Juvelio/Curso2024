@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MiApp.Views.IMCPage"
              xmlns:controls="clr-namespace:MiApp.Controls"
-             Title="Calculadora IMC">
+             Title="Calcular">
 
 
 

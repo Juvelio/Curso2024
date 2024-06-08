@@ -1,0 +1,41 @@
+﻿@page "/citas"
+@using ClienteBlazor.Repositorios
+@using Entidades.Models
+@inject RepositorioCita repositorio
+<h3>IndiceCitas</h3>
+<p>Aqui se mostrara nuestras citas</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Observacion</th>
+            <th scope="col">Nombre del Medico</th>
+            <th scope="col">Nombre del Paciente</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cita in Citas)
+        {
+            <tr>
+                <th scope="row">@cita.Id</th>
+                <td>@cita.Fecha</td>
+                <td>@cita.Estado</td>
+                <td>@cita.Observacion</td>
+                <td>@cita.Medico.Nombre</td>
+                <td>@cita.Persona.Nombres</td>
+            </tr>
+        }          
+    </tbody>
+</table>
+
+@code {
+    public List<Cita> Citas { get; set; } = new List<Cita>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await repositorio.GetCitas("http://localhost:8070/api/v1/Citas");
+        Citas = data;    }
+}

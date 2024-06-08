@@ -41,8 +41,8 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
+	  <ApplicationVersion>6</ApplicationVersion>
 	  <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
@@ -52,29 +52,29 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
+	  <ApplicationVersion>6</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
+	  <ApplicationVersion>6</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
+	  <ApplicationVersion>6</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
+	  <ApplicationVersion>6</ApplicationVersion>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
@@ -83,22 +83,22 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
+	  <ApplicationVersion>6</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
+	  <ApplicationVersion>6</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationTitle>Mi Curso</ApplicationTitle>
 	  <ApplicationId>pe.gob.policia.curso</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
+	  <ApplicationVersion>6</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
