@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using MiApp.Repositorios;
+using System.Collections.ObjectModel;
 
 namespace MiApp
 {
@@ -8,9 +9,14 @@ namespace MiApp
 
         int count = 0;
 
+        private readonly ApiService _apiService;
+
+
         public MainPage()
         {
             InitializeComponent();
+
+            _apiService = new ApiService();
 
             Items = new ObservableCollection<CarouselItem>
             {
@@ -23,6 +29,13 @@ namespace MiApp
             };
 
             BindingContext = this;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //await  _apiService.GetAsync("google.com");
         }
 
         private void OnCounterClicked(object sender, EventArgs e)

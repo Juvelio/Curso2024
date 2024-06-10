@@ -74,10 +74,14 @@
           ContentTemplate="{DataTemplate misPaginas:WeatherPage}"
           Route="WeatherPage" Icon="cloudsunrain.svg"/>
 
-        <ShellContent
+        <!--<ShellContent
          Title="Controles"
          ContentTemplate="{DataTemplate misPaginas:ControlesPage}"
-         Route="ControlesPage" Icon="gearsolid.png"/>
+         Route="ControlesPage" Icon="gearsolid.png"/>-->
+        <ShellContent
+   Title="Citas"
+   ContentTemplate="{DataTemplate misPaginas:CitasPage}"
+   Route="CitasPage" Icon="gearsolid.png"/>
     </TabBar>
 
 </Shell>

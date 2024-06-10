@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiApp.Views.CitasPage"
+             Title="CitasPage">
+    <VerticalStackLayout>
+        <CollectionView x:Name="ColeccionCitas" 
+            Grid.Row="3" Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                        <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Fecha}" TextColor="#757575" FontSize="Body" VerticalOptions="Center" Margin="20,0" FontFamily="RobotoRegular"/>
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                                <Label Text="{Binding Observacion}" 
+                                       TextColor="Black" FontSize="12" FontAttributes="Bold" VerticalOptions="Center" 
+                                       FontFamily="RobotoBold"/>
+                                <StackLayout>
+                                    <Label Text="{Binding Medico.Nombre}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </Grid>
+
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
