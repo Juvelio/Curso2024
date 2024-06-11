@@ -15,7 +15,7 @@ namespace ApiRest.Controller.v1
 {
 	[Route("api/v1/[controller]")]
 	[ApiController]
-	//[Authorize]
+	[Authorize]
 	public class CitasController : ControllerBase
 	{
 		private readonly AplicationDbContext _context;

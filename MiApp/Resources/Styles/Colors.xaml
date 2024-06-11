@@ -42,4 +42,16 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+    <Color x:Key="MiColor50">#eefbf5</Color>
+    <Color x:Key="MiColor100">#d6f5e6</Color>
+    <Color x:Key="MiColor200">#b0ead0</Color>
+    <Color x:Key="MiColor300">#7cd9b6</Color>
+    <Color x:Key="MiColor400">#46c197</Color>
+    <Color x:Key="MiColor500">#24a57d</Color>
+    <Color x:Key="MiColor600">#168566</Color>
+    <Color x:Key="MiColor700">#116b53</Color>
+    <Color x:Key="MiColor800">#105543</Color>
+    <Color x:Key="MiColor900">#0e4437</Color>
+    <Color x:Key="MiColor950">#072720</Color>
 </ResourceDictionary>

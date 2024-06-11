@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MiApp"
     xmlns:misPaginas="clr-namespace:MiApp.Views"    
+    xmlns:helpers="clr-namespace:MiApp.Helpers"
     Shell.FlyoutBehavior="Disabled"
     Title="MiApp">
 
@@ -82,6 +83,17 @@
    Title="Citas"
    ContentTemplate="{DataTemplate misPaginas:CitasPage}"
    Route="CitasPage" Icon="gearsolid.png"/>
+
+        <!--<ShellContent
+            Title="Citas"
+            ContentTemplate="{DataTemplate misPaginas:LoginPage}"
+            Route="LoginPage">
+            <ShellContent.Icon>
+                <FontImageSource 
+                    FontFamily="MaterialIcons"                                                                   
+                    Glyph="{x:Static helpers:IconFont.CalendarMonth}"/>
+            </ShellContent.Icon>
+        </ShellContent>-->
     </TabBar>
 
 </Shell>

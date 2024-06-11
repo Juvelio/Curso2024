@@ -27,7 +27,7 @@ public partial class CitasPage : ContentPage
 
     private async void GuardarDatos()
     {
-      await _Servicio.GuardarDatos("", null);
-        ColeccionCitas.ItemsSource = Citas;
+      //await _Servicio.GuardarDatos("", null);
+      //  ColeccionCitas.ItemsSource = Citas;
     }
 }

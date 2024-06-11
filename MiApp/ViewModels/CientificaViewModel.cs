@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiApp.ViewModels
 {
-    [INotifyPropertyChanged]
-    public partial class CientificaViewModel
+    public partial class CientificaViewModel : ObservableObject
 
     {
         [ObservableProperty]
@@ -18,12 +17,7 @@ namespace MiApp.ViewModels
         [ObservableProperty]
         private string calculatedResult = "0";
 
-        private bool isSciOpWaiting = false;
-
-        public CientificaViewModel
-()
-        {
-        }
+        private bool isSciOpWaiting = false;        
 
         [RelayCommand]
         private void Reset()

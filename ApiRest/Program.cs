@@ -22,21 +22,21 @@ builder.Services.AddScoped<CitaRepositorio>();
 
 //CONFIGURACION DE SERVICIO DE ATENTICACION JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-	.AddJwtBearer(option =>
-	{
-		option.TokenValidationParameters = new TokenValidationParameters()
-		{
-			ValidateIssuer = true,
-			ValidateAudience = true,
-			ValidateLifetime = true,
-			ValidateIssuerSigningKey = true,
+    .AddJwtBearer(option =>
+    {
+        option.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
 
-			ValidIssuer = builder.Configuration["JWT:Issuer"],
-			ValidAudience = builder.Configuration["JWT:Audience"],
-			IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:ClaveSecreta"])),
-			ClockSkew = TimeSpan.Zero
-		};
-	});
+            ValidIssuer = builder.Configuration["JWT:Issuer"],
+            ValidAudience = builder.Configuration["JWT:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:ClaveSecreta"])),
+            ClockSkew = TimeSpan.Zero
+        };
+    });
 
 
 
@@ -44,7 +44,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //builder.Services.AddControllers();
 builder.Services.AddControllers(o =>
 {
-	o.Conventions.Add(new ConvencionVersionPorNamespace());
+    o.Conventions.Add(new ConvencionVersionPorNamespace());
 });
 
 
@@ -53,40 +53,40 @@ builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(swagger =>
 {
-	var versionesApi = new[] { "v1", "v2", "v3" };
-	foreach (var version in versionesApi)
-	{
-		swagger.SwaggerDoc(version, new OpenApiInfo { Title = "Mi Curso Api: S2 PNP MIRANDA LUNA, Juvelio Bladimir", Version = version });
-	}
+    var versionesApi = new[] { "v1", "v2", "v3" };
+    foreach (var version in versionesApi)
+    {
+        swagger.SwaggerDoc(version, new OpenApiInfo { Title = "Mi Curso Api RESTful", Version = version });
+    }
 
-	var esquemaSeguridad = new OpenApiSecurityScheme
-	{
-		Name = "Authorization",
-		Type = SecuritySchemeType.ApiKey,
-		Scheme = "Bearer",
-		BearerFormat = "JWT",
-		In = ParameterLocation.Header,
-		Description = "Encabezado de autorizacion JWT ...."
-	};
+    var esquemaSeguridad = new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Encabezado de autorizacion JWT ...."
+    };
 
-	//AÑADIR DEFINICION DE SEGURIDAD
-	swagger.AddSecurityDefinition("Bearer", esquemaSeguridad);
+    //AÑADIR DEFINICION DE SEGURIDAD
+    swagger.AddSecurityDefinition("Bearer", esquemaSeguridad);
 
-	//AÑADIR REQUISITO DE SEGURIDAD
-	swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
-	{
-		{
-			new OpenApiSecurityScheme
-			{
-				Reference = new OpenApiReference
-				{
-					Type = ReferenceType.SecurityScheme,
-					Id ="Bearer"
-				}
-			}, Array.Empty<string>()
-		}
+    //AÑADIR REQUISITO DE SEGURIDAD
+    swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id ="Bearer"
+                }
+            }, Array.Empty<string>()
+        }
 
-	});
+    });
 
 });
 
@@ -98,17 +98,30 @@ var app = builder.Build();
 //SWAGGER
 app.UseSwagger();
 //app.UseSwaggerUI();
-app.UseSwaggerUI(c =>
+
+if (app.Environment.IsDevelopment())
 {
-	c.SwaggerEndpoint("/swagger/v1/swagger.json", "CursoApi v1");
-	c.SwaggerEndpoint("/swagger/v2/swagger.json", "CursoApi v2");
-	c.SwaggerEndpoint("/swagger/v3/swagger.json", "CursoApi v3");
-});
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "CursoApi v1");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "CursoApi v2");
+        c.SwaggerEndpoint("/swagger/v3/swagger.json", "CursoApi v3");
+    });
+}
+else
+{
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/curso/swagger/v1/swagger.json", "CursoApi v1");
+        c.SwaggerEndpoint("/curso/swagger/v2/swagger.json", "CursoApi v2");
+        c.SwaggerEndpoint("/curso/swagger/v3/swagger.json", "CursoApi v3");
+    });
+}
 
 app.UseCors(builder =>
-	   builder.AllowAnyOrigin()
-			  .AllowAnyMethod()
-			  .AllowAnyHeader());
+       builder.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
 
 //CONFIGURAR LA CANALIZACION DES SOLICITUDES HTTP.
 app.MapControllers();
@@ -116,16 +129,16 @@ app.Run();
 
 public class ConvencionVersionPorNamespace : IControllerModelConvention
 {
-	public void Apply(ControllerModel controller)
-	{
-		var controllerNameSpace = controller.ControllerType.Namespace ?? "";
-		var defaulVersion = "v1";
+    public void Apply(ControllerModel controller)
+    {
+        var controllerNameSpace = controller.ControllerType.Namespace ?? "";
+        var defaulVersion = "v1";
 
-		//obtener la version por el primer segmentro con "v"
-		var apiVersion = controllerNameSpace.Split('.')
-			.FirstOrDefault(segmento => segmento.StartsWith("v", StringComparison.OrdinalIgnoreCase))
-			?? defaulVersion;
+        //obtener la version por el primer segmentro con "v"
+        var apiVersion = controllerNameSpace.Split('.')
+            .FirstOrDefault(segmento => segmento.StartsWith("v", StringComparison.OrdinalIgnoreCase))
+            ?? defaulVersion;
 
-		controller.ApiExplorer.GroupName = apiVersion.ToLower();
-	}
+        controller.ApiExplorer.GroupName = apiVersion.ToLower();
+    }
 }
